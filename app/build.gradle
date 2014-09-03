@@ -22,4 +22,11 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:support-v13:20.0.0'
+    compile files('libs/jackson-annotations-2.0.2.jar')
+    compile files('libs/jackson-core-2.0.2.jar')
+    compile files('libs/jackson-databind-2.0.2.jar')
+    compile files('libs/jackson-mapper-asl-1.9.13.jar')
+    compile files('libs/json-20080701.jar')
+    compile files('libs/robospice-1.4.9.jar')
+    compile files('libs/robospice-spring-android-1.4.9.jar')
 }

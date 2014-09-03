@@ -4,6 +4,14 @@ android {
     compileSdkVersion 20
     buildToolsVersion "20.0.0"
 
+    packagingOptions {
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/ASL2.0'
+    }
+
     defaultConfig {
         applicationId "newsfeed.android.simpp.news_feed"
         minSdkVersion 15
@@ -29,4 +37,8 @@ dependencies {
     compile files('libs/json-20080701.jar')
     compile files('libs/robospice-1.4.9.jar')
     compile files('libs/robospice-spring-android-1.4.9.jar')
+    compile files('libs/spring-android-rest-template-1.0.1.RELEASE.jar')
+    compile files('libs/spring-android-core-1.0.1.RELEASE.jar')
+    compile files('libs/robospice-cache-1.4.9.jar')
+    compile files('libs/jackson-core-asl-1.9.11.jar')
 }

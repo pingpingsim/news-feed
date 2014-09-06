@@ -2,11 +2,13 @@ package simpp.newsfeed.android.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.io.Serializable;
+
 /**
  * Created by user on 9/3/2014.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Category {
+public class Category implements Serializable{
     private String category_id;
     private String display_category_name;
     private String english_category_name;

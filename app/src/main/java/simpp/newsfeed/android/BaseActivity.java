@@ -2,13 +2,14 @@ package simpp.newsfeed.android;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
 import com.octo.android.robospice.SpiceManager;
 
 /**
  * Created by user on 9/3/2014.
  */
-public class BaseActivity extends Activity {
+public class BaseActivity extends FragmentActivity {
     private SpiceManager spiceManager;
 
     @Override

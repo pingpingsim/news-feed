@@ -1,27 +1,31 @@
 package simpp.newsfeed.android.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 
 import com.octo.android.robospice.SpiceManager;
 import com.octo.android.robospice.persistence.DurationInMillis;
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.RequestListener;
 
+import simpp.newsfeed.android.ArticleActivity;
 import simpp.newsfeed.android.DataController;
 import simpp.newsfeed.android.R;
 import simpp.newsfeed.android.data.SubCategoryListingArrayAdapter;
 import simpp.newsfeed.android.model.Category;
+import simpp.newsfeed.android.model.SubCategory;
 import simpp.newsfeed.android.model.SubCategoryList;
 import simpp.newsfeed.android.request.SubCategoryRequest;
 
-public class CategoryFragment extends android.support.v4.app.Fragment {
+public class CategoryFragment extends Fragment {
     // Store instance variables
     private Category category = null;
     private ListView subcategoryListView = null;
@@ -50,11 +54,28 @@ public class CategoryFragment extends android.support.v4.app.Fragment {
         if (view != null){
             subcategoryListView = (ListView) view.findViewById(R.id.subcategory_list_view);
             progressBarContainer = (LinearLayout) view.findViewById(R.id.progress_bar_container);
-        }
 
+            subcategoryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    //final ListView lv = (ListView) view.getParent();
+                    //final int pos = lv.getPositionForView(view);
+                    final SubCategory subCategory = (SubCategory) parent
+                            .getItemAtPosition(position);
+                    startArticleActivity(subCategory);
+                }
+            });
+        }
         CategoryFragment.this.getSubCategoryRequest(CategoryFragment.this.getActivity().getBaseContext(), category.getCategory_id());
 
         return view;
+    }
+
+    private void startArticleActivity(SubCategory subCategory) {
+        final Intent intent = new Intent(getActivity(), ArticleActivity.class);
+        intent.putExtra(this.getString(R.string.bundle_key_sub_category), subCategory.getSubcategory_id());
+        intent.putExtra(this.getString(R.string.bundle_key_category), subCategory.getCategory_id());
+        startActivity(intent);
     }
 
     private void getSubCategoryRequest(Context context, String categoryId) {

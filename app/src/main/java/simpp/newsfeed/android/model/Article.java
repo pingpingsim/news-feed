@@ -1,6 +1,6 @@
 package simpp.newsfeed.android.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 /**
  * Created by user on 9/3/2014.
@@ -13,6 +13,8 @@ public class Article {
     private String publish_date;
     private String author;
     private String source;
+    private String source_url;
+    //private Enclosure enclosures;
 
     public String getUrl() {
         return url;
@@ -61,4 +63,20 @@ public class Article {
     public void setSource(String source) {
         this.source = source;
     }
+
+    public String getSource_url() {
+        return source_url;
+    }
+
+    public void setSource_url(String source_url) {
+        this.source_url = source_url;
+    }
+
+    /*public Enclosure getEnclosures() {
+        return enclosures;
+    }
+
+    public void setEnclosures(Enclosure enclosures) {
+        this.enclosures = enclosures;
+    }*/
 }

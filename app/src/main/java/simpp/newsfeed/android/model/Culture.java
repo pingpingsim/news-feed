@@ -1,6 +1,6 @@
 package simpp.newsfeed.android.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 /**
  * Created by user on 9/3/2014.

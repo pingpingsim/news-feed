@@ -7,8 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import simpp.newsfeed.android.R;
@@ -46,5 +44,4 @@ public class SubCategoryListingArrayAdapter extends ArrayAdapter<SubCategory> {
         }
         return view;
     }
-
 }

@@ -14,7 +14,6 @@ public class Article {
     private String author;
     private String source;
     private String source_url;
-    //private Enclosure enclosures;
 
     public String getUrl() {
         return url;
@@ -71,12 +70,4 @@ public class Article {
     public void setSource_url(String source_url) {
         this.source_url = source_url;
     }
-
-    /*public Enclosure getEnclosures() {
-        return enclosures;
-    }
-
-    public void setEnclosures(Enclosure enclosures) {
-        this.enclosures = enclosures;
-    }*/
 }

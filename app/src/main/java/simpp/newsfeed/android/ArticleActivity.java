@@ -2,6 +2,8 @@ package simpp.newsfeed.android;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.octo.android.robospice.persistence.DurationInMillis;
@@ -55,9 +57,13 @@ public class ArticleActivity extends BaseActivity {
 
     private void populateArticleListView(ArticleList articleListList) {
         ListView articleListView = (ListView) findViewById(R.id.article_list_view);
+        LinearLayout progressBarContainer = (LinearLayout) findViewById(R.id.article_progress_bar_container);
         final ArticleListingArrayAdapter articleArrayAdapter = new ArticleListingArrayAdapter(
                 this, R.layout.article_row, articleListList.getArticles());
         articleListView.setAdapter(articleArrayAdapter);
         articleArrayAdapter.notifyDataSetChanged();
+
+        articleListView.setVisibility(View.VISIBLE);
+        progressBarContainer.setVisibility(View.GONE);
     }
 }

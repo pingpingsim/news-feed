@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- AUTHENTIC JOB API -->
+    <!-- Feedzilla Feed API -->
     <string name="api_base_url">http://api.feedzilla.com/"%1$s"/"%2$s"</string>
     <string name="api_version">v1</string>
     <string name="api_category_json">categories.json</string>
     <string name="api_subcategory_json">subcategories.json</string>
-    <string name="api_most_recent_articles_for_category">categories/"%1$s"/articles.json</string>
+    <string name="api_article_json">articles.json</string>
     <string name="api_sub_categories_for_category">categories/"%1$s"/subcategories.json</string>
+    <string name="api_most_recent_articles_for_category">categories/"%1$s"/articles.json</string>
+    <string name="api_articles_for_sub_category">categories/"%1$s"/subcategories/"%2$s"/articles.json</string>
 </resources>

@@ -44,9 +44,17 @@ public class ArticleListingArrayAdapter extends ArrayAdapter<Article> {
         final Article article = data.get(position);
         if (article != null)
         {
-            TextView display = (TextView) view
-                    .findViewById(R.id.article_display_name);
-            display.setText(article.getTitle());
+            TextView txtViewTitle = (TextView) view
+                    .findViewById(R.id.article_title);
+            txtViewTitle.setText(article.getTitle());
+
+            TextView txtViewPublishedDate = (TextView) view
+                    .findViewById(R.id.article_publish_date);
+            txtViewPublishedDate.setText(article.getPublish_date());
+
+            TextView txtViewSummary = (TextView) view
+                    .findViewById(R.id.article_summary);
+            txtViewSummary.setText(article.getSummary());
         }
         return view;
     }

@@ -1,5 +1,6 @@
 package simpp.newsfeed.android;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class MainActivity extends BaseActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.category_activity);
+        setTitle(getString(R.string.app_name));
         getCategoryRequest(this);
     }
 
@@ -49,9 +51,11 @@ public class MainActivity extends BaseActivity {
             categoryList.remove(0);
             CategoryPagerAdapter adapterViewPager = new CategoryPagerAdapter(MainActivity.this.getSupportFragmentManager(), categoryList);
             vpPager.setAdapter(adapterViewPager);
-            vpPager.setOffscreenPageLimit(adapterViewPager.getCount());
             vpPager.setPageMargin(15);
-            vpPager.setClipChildren(false);
+
+            com.astuetz.PagerSlidingTabStrip tabs = (com.astuetz.PagerSlidingTabStrip) findViewById(R.id.pager_header);
+            tabs.setViewPager(vpPager);
+            tabs.setIndicatorColor(getResources().getColor(R.color.red));
         }
     }
 }

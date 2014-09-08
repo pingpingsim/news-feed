@@ -1,18 +1,12 @@
 package simpp.newsfeed.android;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
 import simpp.newsfeed.android.data.CategoryPagerAdapter;
-import simpp.newsfeed.android.model.Category;
 import simpp.newsfeed.android.model.CategoryList;
-import simpp.newsfeed.android.model.SubCategory;
-import simpp.newsfeed.android.model.SubCategoryList;
 import simpp.newsfeed.android.request.CategoryRequest;
-import simpp.newsfeed.android.request.SubCategoryRequest;
 
 import com.octo.android.robospice.persistence.DurationInMillis;
 import com.octo.android.robospice.persistence.exception.SpiceException;
@@ -27,7 +21,7 @@ public class MainActivity extends BaseActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.category_activity);
-        setTitle(getString(R.string.app_name));
+        setTitle(getString(R.string.title_feed_category));
         getCategoryRequest(this);
     }
 
